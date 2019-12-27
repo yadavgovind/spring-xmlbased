@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="layout.definition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="Layout" />
+		<put-attribute name="body" value="" />
+		<put-list-attribute name="cssitems"></put-list-attribute>
+		<put-list-attribute name="jsitems"></put-list-attribute>
+	</definition>
+	<definition name="adminlayout.definition" template="/WEB-INF/jsp/adminlayout.jsp">
+		<put-attribute name="title" value="Layout" />
+		<put-attribute name="body" value="" />
+		<put-list-attribute name="cssitems"></put-list-attribute>
+		<put-list-attribute name="jsitems"></put-list-attribute>
+	</definition>
+	<definition name="login" template="/WEB-INF/jsp/login.jsp" />
+	<definition name="home" extends="layout.definition">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+	</definition>
+	
+	<definition name="adminhome" extends="adminlayout.definition">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="body" value="/WEB-INF/jsp/adminhome.jsp" />
+	</definition>
+	
+	<!-- category layout -->
+	<definition name="category" extends="adminlayout.definition">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="body" value="/WEB-INF/jsp/category.jsp" />
+		 <put-list-attribute name="jsitems">
+		 <add-attribute type="string" value="../js/bootstrap.js"></add-attribute>
+		<add-attribute type="string" value="../js/bootstrap.min.js"></add-attribute>
+		<add-attribute type="string" value="../js/jquery.dataTables.min.js"></add-attribute>
+		<add-attribute type="string" value="../js/category.js"></add-attribute>
+		</put-list-attribute>
+		<put-list-attribute name="cssitems">
+        <add-attribute type="string" value="../css/jquery.dataTables.css"></add-attribute>
+		<add-attribute type="string" value="../css/bootstrap.css"></add-attribute>
+		<add-attribute type="string" value="../css/bootstrap.min.css"></add-attribute>
+         <add-attribute type="string" value="../css/bootstrap.css.map"></add-attribute>
+		</put-list-attribute>
+		</definition>
+<!-- display blog  comment-->
+	<definition name="disblog" extends="layout.definition">
+		<put-attribute name="title" value="BLOG" />
+		<put-attribute name="body" value="/WEB-INF/jsp/blogdisplay.jsp" />
+		<put-list-attribute name="jsitems">
+		 <add-attribute type="string" value="js/moment.js"></add-attribute>
+		 <add-attribute type="string" value="js/validator/jquery.validate.bootstrap.popover.js"></add-attribute>
+         <add-attribute type="string" value="js/validator/jquery.validate.bootstrap.popover.min.js"></add-attribute>
+	    <add-attribute type="string" value="js/validator/jquery.validate.js"></add-attribute>
+	     <add-attribute type="string" value="js/validator/jquery.validate.min.js"></add-attribute>
+        <add-attribute type="string" value="js/moment.js"></add-attribute>
+        <add-attribute type="string" value="js/moment-with-locales.min.js"></add-attribute> 
+		<add-attribute type="string" value="js/toster/toastr.min.js"></add-attribute> 
+	     <add-attribute type="string" value="js/comment.js"></add-attribute>
+	     </put-list-attribute>
+	     <put-list-attribute name="cssitems">
+        <add-attribute type="string" value="js/toster/toastr.min.css"></add-attribute>
+		</put-list-attribute>
+	</definition>
+	
+	
+	
+	<definition name="newblog" extends="adminlayout.definition">
+		  <put-attribute name="title" value="BLOG" />
+		  <put-attribute name="body" value="/WEB-INF/jsp/newblog.jsp" />
+		<put-list-attribute name="jsitems" inherit="true">
+            <!-- <add-attribute type="string" value="lib/js/moment.js" /> -->
+			<add-attribute type="string" value="../validator/jquery.validate.js" />
+			<add-attribute type="string" value="../validator/jquery.validate.bootstrap.popover.js" />
+			<add-attribute type="string" value="../js/prettify.js" />
+			<add-attribute type="string" value="../js/summernote.js" />
+			<add-attribute type="string" value="../js/newblog.js" />	
+		</put-list-attribute>
+		<put-list-attribute name="cssitems" inherit="true">		
+            <add-attribute type="string" value="../css/summernote.css"></add-attribute>
+		</put-list-attribute>
+	</definition>
+	
+	
+	
+	<definition name="blog" extends="adminlayout.definition">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="body" value="/WEB-INF/jsp/blog.jsp" />
+		<put-list-attribute name="jsitems">
+		<add-attribute type="string" value="../js/jquery.dataTables.min.js"></add-attribute>
+		<add-attribute type="string" value="../js/blog.js"></add-attribute>
+		</put-list-attribute>
+		<put-list-attribute name="cssitems">
+		<add-attribute type="string" value="../css/jquery.dataTables.css"></add-attribute>
+         <add-attribute type="string" value="../css/bootstrap.css.map"></add-attribute>
+			</put-list-attribute> 
+	</definition>
+<!-- comment layout -->
+
+
+	<!-- user layout -->
+	<definition name="user" extends="adminlayout.definition">
+		<put-attribute name="title" value="home" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user.jsp" />
+		<put-list-attribute name="jsitems">
+   <add-attribute type="string" value="../js/jquery.dataTables.min.js"></add-attribute>  
+		<add-attribute type="string" value="../js/user.js"></add-attribute>
+        </put-list-attribute> 
+		  <put-list-attribute name="cssitems">
+		    <add-attribute type="string" value="../css/bootstrap.css.map"></add-attribute>
+		<add-attribute type="string" value="../css/jquery.dataTables.css"></add-attribute>
+	</put-list-attribute> 
+	</definition>
+</tiles-definitions>
+
